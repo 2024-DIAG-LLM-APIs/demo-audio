@@ -10,7 +10,7 @@ response = client.chat.completions.create(
     model="gpt-4o-audio-preview",
     modalities=["text", "audio"],
     audio={
-        "voice": "sage",
+        "voice": "shimmer",
         "format": "mp3"
     },
     messages=messages
@@ -18,6 +18,7 @@ response = client.chat.completions.create(
 
 audio = response.choices[0].message.audio
 print(audio.transcript)
+print(response.usage)
 audio_data = audio.data
 
 with open("audio_output.response1.mp3", "wb") as f:
@@ -38,7 +39,7 @@ response = client.chat.completions.create(
     model="gpt-4o-audio-preview",
     modalities=["text", "audio"],
     audio={
-        "voice": "sage",
+        "voice": "shimmer",
         "format": "mp3"
     },
     messages=messages
@@ -46,6 +47,7 @@ response = client.chat.completions.create(
 
 audio = response.choices[0].message.audio
 print(audio.transcript)
+print(response.usage)
 audio_data = audio.data
 
 with open("audio_output.response2.mp3", "wb") as f:
